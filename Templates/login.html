@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+  </head>
+  <body class="auth-page">
+    <main class="auth-card">
+      <h1>Welcome Back</h1>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <div class="flashes">
+            {% for category, msg in messages %}
+              <div class="flash {{ category }}">{{ msg }}</div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+      <form method="post" class="login-form">
+        <label>
+          Username
+          <input name="username" type="text" placeholder="Your username" required>
+        </label>
+        <label>
+          Password
+          <input name="password" type="password" placeholder="Password" required>
+        </label>
+        <button type="submit" class="btn-primary">Sign in</button>
+      </form>
+      <p class="muted">Demo login: any non-empty credentials accepted.</p>
+    </main>
+  </body>
+</html>
