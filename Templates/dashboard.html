@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+  </head>
+  <body>
+    <header class="dash-header">
+      <div class="brand">Coffee Shop Admin</div>
+      <nav>
+        <span class="welcome">Hi, {{ user }}</span>
+        <a class="btn-ghost" href="{{ url_for('logout') }}">Logout</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h2>Dashboard Overview</h2>
+      <p class="muted">Quick metrics and actions to manage the store.</p>
+      <div class="actions">
+        <button id="toggle-cards" class="btn">Toggle Metrics</button>
+        <button id="new-product" class="btn accent">Add Product</button>
+      </div>
+    </section>
+
+    <section class="stats-grid" id="stats">
+      <div class="card">
+        <h3>Orders</h3>
+        <p class="big">{{ stats.orders }}</p>
+      </div>
+      <div class="card">
+        <h3>Products</h3>
+        <p class="big">{{ stats.products }}</p>
+      </div>
+      <div class="card">
+        <h3>Users</h3>
+        <p class="big">{{ stats.users }}</p>
+      </div>
+      <div class="card">
+        <h3>Revenue</h3>
+        <p class="big">{{ stats.revenue }}</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h3>Quick Actions</h3>
+      <div class="panel-grid">
+        <div class="panel-item">
+          <h4>Orders</h4>
+          <p>View recent orders and manage shipping.</p>
+          <a class="btn-link" href="#">Open orders</a>
+        </div>
+        <div class="panel-item">
+          <h4>Products</h4>
+          <p>Edit catalog, update prices and inventory.</p>
+          <a class="btn-link" href="#">Manage products</a>
+        </div>
+        <div class="panel-item">
+          <h4>Promotions</h4>
+          <p>Create discount campaigns and coupons.</p>
+          <a class="btn-link" href="#">Create promo</a>
+        </div>
+      </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+  </body>
+</html>
