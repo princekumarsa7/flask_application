@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+    <form action="/" method="POST">
+        <label for="Name">Name : </label>
+        <input type="text" id="Name" name="username" placeholder="apna naam do">
+        <br><br>
+
+        <label for="Fathers_Name">Father's Name : </label>
+        <input type="text" id="Fathers_Name" name="father_name" placeholder="baap ka naam do">
+        <br><br>
+
+        <label for="Mothers_Name">Mother's Name : </label>
+        <input type="text" id="Mothers_Name" name="mother_name" placeholder="Mata gi ka naam do">
+        <br><br>
+
+        <label for="Phone_no">Phone no : </label>
+        <input type="text" id="Phone_no" name="phone_no" placeholder="phone no do">
+        <br><br>
+        
+        <button type="submit" id="Submit">Submit</button>
+    </form>
+</body>
+</html>
